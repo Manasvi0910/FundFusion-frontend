@@ -246,12 +246,12 @@ const OverlapAnalysis = ({ overlapData }) => {
 
       {/* Main visualization area with proper spacing */}
       <div className="w-full h-96 bg-gray-800 relative flex">
-        {/* Left section with fund boxes */}
+        {/* Left section with fund boxes - FIXED VERTICAL ALIGNMENT */}
         <div className="w-1/4 h-full flex flex-col justify-around pr-4">
           {displayFunds.map((fund, index) => (
             <div key={index} className="h-14 mb-2">
-              <div className={`${fund.color} py-2 px-3 h-full rounded text-white text-center w-full`}>
-                <div className="text-sm leading-tight">
+              <div className={`${fund.color} h-full rounded flex items-center justify-center`}>
+                <div className="text-sm px-2 text-center">
                   {fund.name}
                 </div>
               </div>
