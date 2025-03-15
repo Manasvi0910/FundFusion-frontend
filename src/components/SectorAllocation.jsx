@@ -3,9 +3,9 @@ import React from 'react';
 const SectorAllocation = ({ sectorData }) => {
   // Sample data using the values from the image
   const defaultSectorData = [
-    { sector: 'Financial', amount: 195000, percentage: 34, bgColor: '#A5B4FC' },
-    { sector: 'Healthcare', amount: 83250, percentage: 14.5, bgColor: '#93A5C4' },
-    { sector: 'Technology', amount: 111000, percentage: 19, bgColor: '#D1C4E9' },
+    { sector: 'Financial', amount: 195000, percentage: 34, bgColor: '#9bb0c7' },
+    { sector: 'Healthcare', amount: 83250, percentage: 14.5, bgColor: '#adb8cf' },
+    { sector: 'Technology', amount: 111000, percentage: 19, bgColor: '#c6c4d8' },
     { sector: 'Consumer Goods', amount: 55500, percentage: 9.5, bgColor: '#EDE7F6' },
     { sector: 'Energy', amount: 55500, percentage: 9.5, bgColor: '#EDE7F6' },
     { sector: 'Other Sectors', amount: 55500, percentage: 9.5, bgColor: '#EDE7F6' }
@@ -15,13 +15,13 @@ const SectorAllocation = ({ sectorData }) => {
   const data = sectorData || defaultSectorData;
 
   return (
-    <div className="p-6" style={{ backgroundColor: '#111111' }}>
+    <div className="bg-gray-800 rounded-lg p-6">
       <h2 className="text-2xl font-semibold mb-6 text-white">Sector Allocation</h2>
       <div className="grid grid-cols-12 gap-4">
         {/* Financial - large box (spans 8 columns) */}
         <div 
           className="col-span-8 p-4 rounded" 
-          style={{ backgroundColor: '#A5B4FC', height: '240px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
+          style={{ backgroundColor: '#9bb0c7', height: '240px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
         >
           <div>
             <div className="text-lg font-medium text-black">{data[0].sector}</div>
@@ -35,7 +35,7 @@ const SectorAllocation = ({ sectorData }) => {
         {/* Healthcare - medium box (spans 4 columns) */}
         <div 
           className="col-span-4 p-4 rounded" 
-          style={{ backgroundColor: '#93A5C4', height: '240px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
+          style={{ backgroundColor: '#adb8cf', height: '240px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
         >
           <div>
             <div className="text-lg font-medium text-black">{data[1].sector}</div>
@@ -49,7 +49,7 @@ const SectorAllocation = ({ sectorData }) => {
         {/* Technology - medium-large box (spans 6 columns) */}
         <div 
           className="col-span-6 p-4 rounded" 
-          style={{ backgroundColor: '#D1C4E9', height: '180px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
+          style={{ backgroundColor: '#c6c4d8', height: '180px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
         >
           <div>
             <div className="text-lg font-medium text-black">{data[2].sector}</div>
@@ -103,6 +103,7 @@ const SectorAllocation = ({ sectorData }) => {
         </div>
       </div>
     </div>
+
   );
 };
 

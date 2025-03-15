@@ -4,7 +4,7 @@ import { Search, Bell, Users, LogOut } from 'lucide-react';
 
 const Header = () => {
   return (
-    <header className="bg-dark border-b border-gray-800 p-4 flex justify-between items-center">
+    <header className="bg-gray-800 border-b border-gray-900 p-3 flex justify-between items-center">
       <nav className="flex space-x-8">
         <Link to="/" className="text-gray-400 hover:text-white">Home</Link>
         <Link to="/" className="text-white border-b-2 border-blue-500 pb-1">Portfolio</Link>

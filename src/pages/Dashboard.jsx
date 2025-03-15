@@ -32,7 +32,8 @@ const Dashboard = () => {
         worstFund={data.worst_performing_scheme}
       />
 
-      <div className="mb-4 border-b border-gray-800">
+      {/* Added margin-top (mt-8) here to create the gap */}
+      <div className="mt-20 mb-4 border-b border-gray-800">
         <div className="flex">
           <button
             className={`px-4 py-2 ${activeTab === 'performance' ? 'border-b-2 border-blue-500 text-white' : 'text-gray-400'}`}
@@ -57,8 +58,10 @@ const Dashboard = () => {
         />
       ) : (
         <>
-          <SectorAllocation sectorData={data.sector_allocation} />
-          <OverlapAnalysis overlapData={data.fund_overlap} />
+          <div className="space-y-8">
+            <SectorAllocation sectorData={data.sector_allocation} />
+            <OverlapAnalysis overlapData={data.fund_overlap} />
+          </div>
         </>
       )}
     </div>
