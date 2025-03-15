@@ -286,14 +286,24 @@ const OverlapAnalysis = ({ overlapData }) => {
                 if (!isHeldByFund) return null;
                 
                 // Calculate vertical positions based on the number of funds
-                const fundSpacing = 360 / (displayFunds.length + 1);
-                const fundY = 30 + (fundIndex + 1) * fundSpacing;
-                const stockY = 35 + stockIndex * 58;
+                // Adjust the fund position to align with the center of the fund bar
+                const fundBoxHeight = 56; // 14 * 4 for each h-14 element
+                const fundTotalHeight = displayFunds.length * fundBoxHeight;
+                const fundSpacing = 400 / (displayFunds.length);
+                const fundY = (fundIndex * fundSpacing) + (fundSpacing / 2);
+                
+                // Adjust stock position to align with the center of the stock bar
+                const stockBoxHeight = 40; // h-10 for each stock element
+                const stockTotalHeight = stocks.length * stockBoxHeight;
+                const stockSpacing = 400 / stocks.length;
+                const stockY = (stockIndex * stockSpacing) + (stockSpacing / 2);
                 
                 // Randomize which connections appear darker based on fund pairs
                 const randomModifier = (fundIndex * stockIndex) % displayFunds.length;
                 const opacity = 0.3 + (randomModifier * 0.1);
                 
+                // Create bezier curve from fund bar to stock bar
+                // Adjust the curve control points for smooth transition
                 return (
                   <path
                     key={`${fundIndex}-${stockIndex}`}
